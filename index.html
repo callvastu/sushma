@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sushma Chhetri — Professional Makeup Artist</title>
+<meta name="description" content="Sushma Chhetri, professional makeup artist with 11+ years of experience. Bridal, non-bridal, engagement, party makeup, lashes, nails and mehndi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FBF7F1;
+    --cream:#F3EBDF;
+    --beige:#E8DCC9;
+    --rose:#BD8B82;
+    --rose-deep:#A6706A;
+    --brown:#8A6A54;
+    --charcoal:#2B2521;
+    --charcoal-soft:#4A423C;
+    --gold:#AD8A54;
+    --line:rgba(43,37,33,0.12);
+    --shadow:0 20px 60px rgba(43,37,33,0.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost',sans-serif;
+    color:var(--charcoal);
+    background:var(--ivory);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img,video{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  h1,h2,h3,h4{
+    font-family:'Fraunces',serif;
+    font-weight:400;
+    letter-spacing:0.01em;
+    line-height:1.15;
+  }
+  .eyebrow{
+    font-family:'Jost',sans-serif;
+    font-size:12px;
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+    color:var(--rose-deep);
+    font-weight:500;
+  }
+  .container{
+    max-width:1240px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 34px;
+    font-family:'Jost',sans-serif;
+    font-size:13px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    font-weight:500;
+    border-radius:2px;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:all .35s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--charcoal);
+    color:var(--ivory);
+  }
+  .btn-primary:hover{background:var(--rose-deep);}
+  .btn-outline{
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.7);
+    color:#fff;
+  }
+  .btn-outline:hover{background:rgba(255,255,255,0.12);}
+  .btn-outline-dark{
+    background:transparent;
+    border:1px solid var(--charcoal);
+    color:var(--charcoal);
+  }
+  .btn-outline-dark:hover{background:var(--charcoal);color:var(--ivory);}
+  .btn-rose{background:var(--rose-deep);color:#fff;}
+  .btn-rose:hover{background:var(--charcoal);}
+
+  /* ---------- Ornament (henna-inspired divider) ---------- */
+  .ornament{
+    width:64px;height:18px;
+    margin:0 auto;
+    opacity:0.7;
+  }
+  .ornament path{stroke:var(--gold);stroke-width:1.1;fill:none;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    z-index:1000;
+    padding:22px 0;
+    transition:all .4s ease;
+    background:transparent;
+  }
+  header.scrolled{
+    background:rgba(251,247,241,0.92);
+    backdrop-filter:blur(10px);
+    padding:14px 0;
+    box-shadow:0 1px 0 var(--line);
+  }
+  header .container{
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{
+    color:#fff;
+    transition:color .4s ease;
+  }
+  header.scrolled .brand{color:var(--charcoal);}
+  .brand .name{
+    font-family:'Fraunces',serif;
+    font-size:22px;
+    letter-spacing:0.06em;
+  }
+  .brand .role{
+    font-family:'Jost',sans-serif;
+    font-size:10px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    opacity:0.85;
+  }
+  nav.main-nav{display:flex;align-items:center;gap:44px;}
+  nav.main-nav ul{display:flex;gap:36px;}
+  nav.main-nav a.nav-link{
+    color:#fff;
+    font-size:13px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    position:relative;
+    padding-bottom:4px;
+    transition:color .4s ease;
+  }
+  header.scrolled a.nav-link{color:var(--charcoal-soft);}
+  a.nav-link::after{
+    content:'';position:absolute;left:0;bottom:0;width:0;height:1px;
+    background:currentColor;transition:width .3s ease;
+  }
+  a.nav-link:hover::after{width:100%;}
+  .header-cta .btn-primary{
+    background:var(--rose-deep);color:#fff;
+  }
+  header:not(.scrolled) .header-cta .btn-primary{
+    background:#fff;color:var(--charcoal);
+  }
+  .hamburger{
+    display:none;flex-direction:column;gap:5px;
+    cursor:pointer;z-index:1100;background:none;border:none;padding:6px;
+  }
+  .hamburger span{
+    width:26px;height:1px;background:#fff;
+    transition:all .35s ease;
+  }
+  header.scrolled .hamburger span{background:var(--charcoal);}
+  .hamburger.open span{background:var(--charcoal);}
+  .hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+  .mobile-menu{
+    position:fixed;inset:0;background:var(--ivory);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:28px;z-index:1050;
+    transform:translateY(-100%);
+    transition:transform .5s cubic-bezier(.77,0,.18,1);
+  }
+  .mobile-menu.open{transform:translateY(0);}
+  .mobile-menu a{
+    font-family:'Fraunces',serif;font-size:28px;color:var(--charcoal);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    height:100vh;
+    min-height:640px;
+    display:flex;align-items:flex-end;
+    overflow:hidden;
+    background:var(--charcoal);
+  }
+  .hero video{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    object-fit:cover;
+    object-position:center 30%;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(20,16,14,0.35) 0%, rgba(20,16,14,0.15) 35%, rgba(20,16,14,0.75) 100%);
+    z-index:1;
+  }
+  .hero::after{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(120% 90% at 50% 100%, rgba(20,16,14,0.55), transparent 60%);
+    z-index:1;
+  }
+  .hero-content{
+    position:relative;z-index:2;
+    width:100%;
+    padding-bottom:96px;
+    color:#fff;
+    text-align:center;
+  }
+  .hero-content .eyebrow{color:var(--beige);opacity:0.9;}
+  .hero-content h1{
+    font-size:clamp(40px, 6.4vw, 84px);
+    color:#fff;
+    margin:18px 0 20px;
+    font-weight:400;
+  }
+  .hero-content .sub{
+    font-size:15px;
+    letter-spacing:0.06em;
+    color:var(--beige);
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .hero-content p.intro{
+    max-width:560px;
+    margin:0 auto 34px;
+    font-size:17px;
+    line-height:1.7;
+    color:rgba(255,255,255,0.86);
+  }
+  .hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .scroll-cue{
+    position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+    z-index:2;color:#fff;opacity:0.75;
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+  }
+  .scroll-cue .line{width:1px;height:34px;background:rgba(255,255,255,0.6);animation:scrollpulse 2.2s ease-in-out infinite;}
+  @keyframes scrollpulse{0%{transform:scaleY(0.2);opacity:0;}50%{transform:scaleY(1);opacity:1;}100%{transform:scaleY(0.2);opacity:0;}}
+
+  /* ---------- Sections general ---------- */
+  section{padding:120px 0;}
+  .section-head{text-align:center;margin-bottom:64px;}
+  .section-head h2{font-size:clamp(30px,4vw,46px);margin:16px 0 14px;}
+  .section-head .subhead{color:var(--charcoal-soft);font-size:15px;max-width:520px;margin:0 auto;line-height:1.7;}
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease, transform .9s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- Placeholder image ---------- */
+  .ph{
+    position:relative;
+    isolation:isolate;
+    background:linear-gradient(135deg,var(--cream),var(--beige));
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+    color:var(--brown);
+  }
+  .ph::before{
+    content:'';position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(139,106,84,0.06) 0 2px, transparent 2px 18px);
+  }
+  .ph .ph-inner{
+    position:relative;z-index:2;
+    text-align:center;
+    padding:20px;
+  }
+  .ph .ph-icon{
+    width:38px;height:38px;margin:0 auto 10px;
+    border:1px solid var(--brown);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:18px;font-weight:300;
+    opacity:0.75;
+  }
+  .ph .ph-label{
+    font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+    opacity:0.75;font-weight:500;
+  }
+  .ph .ph-cat{
+    font-family:'Fraunces',serif;font-style:italic;font-size:14px;
+    margin-top:4px;opacity:0.6;
+  }
+  .ph img{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    object-fit:cover;
+    z-index:1;
+  }
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display:grid;grid-template-columns:0.85fr 1fr;gap:80px;align-items:center;
+  }
+  .about-photo{
+    aspect-ratio:4/5;border-radius:2px;
+  }
+  .about-photo .ph-icon{border-color:var(--brown);}
+  .about-copy .eyebrow{margin-bottom:14px;}
+  .about-copy h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:22px;}
+  .about-copy p{
+    font-size:15.5px;line-height:1.85;color:var(--charcoal-soft);
+    margin-bottom:28px;max-width:480px;
+  }
+  .badge-row{display:flex;align-items:center;gap:18px;margin-bottom:34px;}
+  .badge{
+    display:flex;flex-direction:column;
+    border-left:1px solid var(--gold);
+    padding-left:16px;
+  }
+  .badge .num{font-family:'Fraunces',serif;font-size:30px;color:var(--rose-deep);}
+  .badge .label{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-soft);}
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:2px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .service-card{
+    background:var(--ivory);
+    padding:0;
+    display:flex;flex-direction:column;
+  }
+  .service-card .ph{
+    flex:0 0 220px;
+    height:220px;
+    width:100%;
+  }
+  .service-card .service-body{padding:28px 26px 32px;flex:1;}
+  .service-card h3{font-size:19px;margin-bottom:10px;font-weight:400;}
+  .service-card p{font-size:14px;line-height:1.7;color:var(--charcoal-soft);}
+  .service-card .idx{
+    font-size:11px;letter-spacing:0.14em;color:var(--gold);margin-bottom:10px;display:block;
+  }
+
+  /* ---------- Bridal feature ---------- */
+  .bridal-feature{
+    background:var(--charcoal);
+    color:var(--ivory);
+    position:relative;
+    overflow:hidden;
+  }
+  .bridal-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;
+    align-items:center;
+  }
+  .bridal-copy{padding:0 80px 0 0;}
+  .bridal-copy .eyebrow{color:var(--rose);}
+  .bridal-copy h2{color:#fff;font-size:clamp(30px,4vw,44px);margin:16px 0 22px;}
+  .bridal-copy p{color:rgba(251,247,241,0.75);font-size:15.5px;line-height:1.85;margin-bottom:36px;max-width:460px;}
+  .feature-points{display:flex;flex-direction:column;gap:24px;margin-bottom:40px;}
+  .feature-point{display:flex;gap:16px;align-items:flex-start;}
+  .feature-point .dot{
+    width:6px;height:6px;border-radius:50%;background:var(--gold);
+    margin-top:9px;flex-shrink:0;
+  }
+  .feature-point h4{font-size:14px;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;font-family:'Jost',sans-serif;color:#fff;margin-bottom:5px;}
+  .feature-point span{font-size:14px;color:rgba(251,247,241,0.65);}
+  .bridal-photo{aspect-ratio:4/5;}
+  .bridal-photo.ph{background:linear-gradient(135deg,#3a322c,#544539);color:var(--beige);}
+  .bridal-photo .ph-icon{border-color:var(--beige);}
+
+  /* ---------- Portfolio ---------- */
+  .portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+  }
+  .portfolio-grid .ph{
+    width:100%;
+    aspect-ratio:4/5;
+    border-radius:2px;
+  }
+
+  /* ---------- Instagram ---------- */
+  .instagram-section{
+    background:var(--cream);
+  }
+  .insta-grid{
+    display:grid;grid-template-columns:1.1fr 0.9fr;
+    gap:70px;align-items:center;
+  }
+  .insta-copy .eyebrow{margin-bottom:14px;}
+  .insta-copy h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:16px;}
+  .insta-copy p{font-size:15.5px;line-height:1.8;color:var(--charcoal-soft);margin-bottom:30px;max-width:440px;}
+  .insta-handle{
+    display:inline-flex;align-items:center;gap:12px;
+    margin-bottom:34px;
+    font-family:'Fraunces',serif;font-size:20px;
+  }
+  .insta-icon{width:30px;height:30px;flex-shrink:0;}
+  .qr-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:40px;
+    box-shadow:var(--shadow);
+    text-align:center;
+    max-width:340px;
+    margin:0 auto;
+    position:relative;
+  }
+  .qr-card .corner{
+    position:absolute;width:22px;height:22px;
+    border:1px solid var(--gold);
+    opacity:0.6;
+  }
+  .qr-card .corner.tl{top:12px;left:12px;border-right:none;border-bottom:none;}
+  .qr-card .corner.tr{top:12px;right:12px;border-left:none;border-bottom:none;}
+  .qr-card .corner.bl{bottom:12px;left:12px;border-right:none;border-top:none;}
+  .qr-card .corner.br{bottom:12px;right:12px;border-left:none;border-top:none;}
+  .qr-card img{width:180px;height:180px;margin:0 auto 20px;}
+  .qr-card .scan-label{
+    font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--rose-deep);
+    margin-bottom:6px;font-weight:500;
+  }
+  .qr-card .handle{font-family:'Fraunces',serif;font-size:20px;margin-bottom:22px;}
+
+  /* ---------- Testimonials ---------- */
+  .testimonials-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:40px;
+  }
+  .testimonial-card{
+    padding:40px 34px;
+    border:1px solid var(--line);
+    background:var(--ivory);
+    position:relative;
+  }
+  .testimonial-card .quote-mark{
+    font-family:'Fraunces',serif;font-size:52px;color:var(--rose);
+    line-height:1;margin-bottom:8px;opacity:0.7;
+  }
+  .testimonial-card p{
+    font-size:15px;line-height:1.85;color:var(--charcoal-soft);
+    font-style:italic;font-family:'Fraunces',serif;margin-bottom:24px;
+  }
+  .testimonial-card .author{
+    font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--brown);
+    font-weight:500;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact-section{
+    background:var(--charcoal);color:var(--ivory);
+  }
+  .contact-top{text-align:center;max-width:640px;margin:0 auto 56px;}
+  .contact-top .eyebrow{color:var(--rose);}
+  .contact-top h2{color:#fff;font-size:clamp(30px,4vw,46px);margin:16px 0 18px;}
+  .contact-top p{color:rgba(251,247,241,0.75);font-size:15.5px;line-height:1.8;}
+  .contact-actions{
+    display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:34px;
+  }
+  .contact-actions .btn{font-size:12px;}
+  .contact-grid{
+    display:grid;grid-template-columns:0.9fr 1.1fr;gap:70px;
+    max-width:1000px;margin:70px auto 0;
+  }
+  .contact-info{border-right:1px solid rgba(251,247,241,0.15);padding-right:50px;}
+  .contact-info h4{font-family:'Jost',sans-serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--rose);margin-bottom:26px;font-weight:500;}
+  .contact-info .info-row{margin-bottom:22px;}
+  .contact-info .info-row .k{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(251,247,241,0.5);margin-bottom:5px;}
+  .contact-info .info-row .v{font-size:15px;color:#fff;}
+  form{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  form .full{grid-column:1/-1;}
+  .field label{
+    display:block;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;
+    color:rgba(251,247,241,0.6);margin-bottom:9px;
+  }
+  .field input, .field select, .field textarea{
+    width:100%;
+    background:transparent;
+    border:none;
+    border-bottom:1px solid rgba(251,247,241,0.3);
+    color:#fff;
+    font-family:'Jost',sans-serif;
+    font-size:15px;
+    padding:8px 2px;
+    transition:border-color .3s ease;
+  }
+  .field select option{color:#111;}
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none;border-color:var(--gold);
+  }
+  .field textarea{resize:vertical;min-height:70px;}
+  form .full.submit-row{margin-top:8px;display:flex;align-items:center;gap:22px;}
+  .form-note{font-size:12.5px;color:rgba(251,247,241,0.45);}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:#221D19;color:rgba(251,247,241,0.65);
+    padding:70px 0 30px;
+  }
+  .footer-top{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    flex-wrap:wrap;gap:40px;
+    padding-bottom:40px;border-bottom:1px solid rgba(251,247,241,0.1);
+  }
+  .footer-brand .name{font-family:'Fraunces',serif;color:#fff;font-size:22px;letter-spacing:0.05em;margin-bottom:8px;}
+  .footer-brand .tag{font-size:12.5px;letter-spacing:0.05em;}
+  .footer-services{font-size:13px;line-height:2;max-width:420px;text-align:right;}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:26px;flex-wrap:wrap;gap:16px;
+    font-size:12px;
+  }
+  .footer-social{display:flex;align-items:center;gap:10px;}
+  .footer-social svg{width:16px;height:16px;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1024px){
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .about-grid, .bridal-grid, .insta-grid, .contact-grid{grid-template-columns:1fr;}
+    .bridal-copy{padding-right:0;}
+    .bridal-photo{order:-1;aspect-ratio:16/9;}
+    .contact-info{border-right:none;border-bottom:1px solid rgba(251,247,241,0.15);padding-right:0;padding-bottom:36px;}
+    .testimonials-grid{grid-template-columns:1fr;}
+    .portfolio-grid{grid-template-columns:repeat(3,1fr);}
+  }
+  @media (max-width:768px){
+    nav.main-nav ul, .header-cta{display:none;}
+    .hamburger{display:flex;}
+    section{padding:80px 0;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .portfolio-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
+    form{grid-template-columns:1fr;}
+    .hero-buttons{flex-direction:column;width:100%;max-width:280px;margin:0 auto;}
+    .hero-buttons .btn{width:100%;justify-content:center;}
+  }
+  @media (max-width:480px){
+    .services-grid{grid-template-columns:1fr;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+    .reveal{opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="siteHeader">
+  <div class="container">
+    <a href="#home" class="brand">
+      <div class="name">SUSHMA CHHETRI</div>
+      <div class="role">Professional Makeup Artist</div>
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#bridal" class="nav-link">Bridal</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="header-cta">
+        <a href="#contact" class="btn btn-primary">Book an Appointment</a>
+      </div>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#bridal">Bridal</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-outline-dark" style="margin-top:10px;">Book an Appointment</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <video autoplay muted loop playsinline webkit-playsinline="true" preload="auto" poster="assets/hero-poster.jpg">
+    <source src="assets/hero-video.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content container">
+    <div class="eyebrow">11+ Years of Artistry</div>
+    <h1>Beauty That Feels<br>Like You</h1>
+    <div class="sub">Professional Makeup Artist · Kathmandu</div>
+    <p class="intro">Creating elegant, personalized makeup looks for brides, special occasions, and unforgettable moments.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-outline">Book an Appointment</a>
+      <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><div class="line"></div></div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="ph about-photo reveal" data-upload="Sushma Photo">
+        <img src="assets/sushma-photo.jpg" alt="Sushma Chhetri, professional makeup artist">
+      </div>
+      <div class="about-copy reveal">
+        <div class="eyebrow">About Sushma</div>
+        <h2>11+ Years of Beauty &amp; Makeup Expertise</h2>
+        <p>With over 11 years of professional experience, Sushma Chhetri specializes in creating elegant, timeless, and personalized makeup looks. Every look is carefully designed to complement the client's features, personality, outfit, and occasion.</p>
+        <div class="badge-row">
+          <div class="badge">
+            <span class="num">11+</span>
+            <span class="label">Years Experience</span>
+          </div>
+          <div class="badge">
+            <span class="num">7</span>
+            <span class="label">Signature Services</span>
+          </div>
+        </div>
+        <a href="#services" class="btn btn-outline-dark">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" style="background:var(--cream);">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Services</div>
+      <h2>Everything You Need to<br>Look &amp; Feel Your Best</h2>
+      <svg class="ornament" viewBox="0 0 64 18"><path d="M0 9 C 16 -4, 24 22, 32 9 S 48 -4, 64 9"/></svg>
+    </div>
+
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="ph" data-upload="Bridal Makeup Image"><img src="assets/bridal-makeup.jpg" alt="Bridal makeup"></div>
+        <div class="service-body">
+          <h3>Bridal &amp; Non-Bridal Makeup</h3>
+          <p>Professional makeup customized to your features, outfit, personality, and occasion.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="ph" data-upload="Wedding Makeup Image"><img src="assets/wedding-makeup.jpg" alt="Pre and post wedding makeup"></div>
+        <div class="service-body">
+          <h3>Pre &amp; Post-Wedding</h3>
+          <p>Beautiful makeup looks for every celebration surrounding your wedding.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="ph" data-upload="Engagement Image"><img src="assets/engagement-makeup.jpg" alt="Engagement makeup"></div>
+        <div class="service-body">
+          <h3>Engagement Makeup</h3>
+          <p>Elegant and radiant makeup designed to complement your engagement look.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="ph" data-upload="Party Makeup Image"><img src="assets/party-makeup.jpg" alt="Party and event makeup"></div>
+        <div class="service-body">
+          <h3>Party &amp; Events</h3>
+          <p>Professional makeup for parties, celebrations, photoshoots, festivals and events.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="ph" data-upload="Lashes & Nails Image"><img src="assets/lashes-nails.jpg" alt="Lash and nail extensions"></div>
+        <div class="service-body">
+          <h3>Lashes &amp; Nails</h3>
+          <p>Lash extensions, nail extensions, and creative nail art to complete your look.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="ph" data-upload="Mehndi Image"><img src="assets/mehndi.jpg" alt="Mehndi henna design"></div>
+        <div class="service-body">
+          <h3>Mehndi / Henna</h3>
+          <p>Traditional Mehndi designs from elegant minimal patterns to detailed bridal art.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="ph" data-upload="Bridal Grooming Image"><img src="assets/bridal-grooming.jpg" alt="Complete bridal grooming"></div>
+        <div class="service-body">
+          <h3>Complete Bridal Grooming</h3>
+          <p>A complete beauty preparation experience to help brides look and feel their best.</p>
+        </div>
+      </div>
+      <div class="service-card" style="display:flex;align-items:center;justify-content:center;background:var(--charcoal);">
+        <div style="padding:32px;text-align:center;">
+          <div class="eyebrow" style="color:var(--rose);margin-bottom:14px;">Not Sure What You Need?</div>
+          <a href="#contact" class="btn btn-outline">Book a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BRIDAL FEATURE ================= -->
+<section class="bridal-feature" id="bridal">
+  <div class="container">
+    <div class="bridal-grid">
+      <div class="bridal-copy reveal">
+        <div class="eyebrow">Bridal Artistry</div>
+        <h2>Your Perfect Bridal Look</h2>
+        <p>Your wedding day deserves a look that is uniquely yours. From makeup and lashes to nails and Mehndi, every detail is carefully considered to create a beautiful and memorable bridal experience.</p>
+        <div class="feature-points">
+          <div class="feature-point">
+            <div class="dot"></div>
+            <div><h4>Personalized Looks</h4><span>Makeup designed around your features and style.</span></div>
+          </div>
+          <div class="feature-point">
+            <div class="dot"></div>
+            <div><h4>Attention to Detail</h4><span>Every detail is carefully finished.</span></div>
+          </div>
+          <div class="feature-point">
+            <div class="dot"></div>
+            <div><h4>11+ Years Experience</h4><span>Professional beauty experience you can trust.</span></div>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-rose">Book Bridal Appointment</a>
+      </div>
+      <div class="ph bridal-photo reveal" data-upload="Bridal Feature Image">
+        <img src="assets/bridal-feature.jpg" alt="Bridal makeup feature">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTFOLIO ================= -->
+<section id="portfolio">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Portfolio</div>
+      <h2>Beauty in Every Detail</h2>
+      <svg class="ornament" viewBox="0 0 64 18"><path d="M0 9 C 16 -4, 24 22, 32 9 S 48 -4, 64 9"/></svg>
+    </div>
+    <div class="portfolio-grid reveal">
+      <div class="ph" data-upload="Portfolio 01"><img src="assets/portfolio-01.jpg" alt="Bridal makeup portfolio"></div>
+      <div class="ph" data-upload="Portfolio 02"><img src="assets/portfolio-02.jpg" alt="Non-bridal makeup portfolio"></div>
+      <div class="ph" data-upload="Portfolio 03"><img src="assets/portfolio-03.jpg" alt="Engagement makeup portfolio"></div>
+      <div class="ph" data-upload="Portfolio 04"><img src="assets/portfolio-04.jpg" alt="Party makeup portfolio"></div>
+      <div class="ph" data-upload="Portfolio 05"><img src="assets/portfolio-05.jpg" alt="Lashes portfolio"></div>
+      <div class="ph" data-upload="Portfolio 06"><img src="assets/portfolio-06.jpg" alt="Nails portfolio"></div>
+      <div class="ph" data-upload="Portfolio 07"><img src="assets/portfolio-07.jpg" alt="Mehndi portfolio"></div>
+      <div class="ph" data-upload="Portfolio 08"><img src="assets/portfolio-08.jpg" alt="Bridal grooming portfolio"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INSTAGRAM ================= -->
+<section class="instagram-section">
+  <div class="container">
+    <div class="insta-grid">
+      <div class="insta-copy reveal">
+        <div class="eyebrow">Follow the Beauty Journey</div>
+        <h2>See More Looks &amp; Bridal Inspiration</h2>
+        <p>Follow along for recent transformations, behind-the-scenes moments, and bridal inspiration.</p>
+        <a href="https://instagram.com/sush_artistry" target="_blank" rel="noopener" class="insta-handle">
+          <svg class="insta-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="6" stroke="var(--charcoal)" stroke-width="1.4"/>
+            <circle cx="12" cy="12" r="4.6" stroke="var(--charcoal)" stroke-width="1.4"/>
+            <circle cx="17.4" cy="6.6" r="1.1" fill="var(--charcoal)"/>
+          </svg>
+          @sush_artistry
+        </a>
+        <br>
+        <a href="https://instagram.com/sush_artistry" target="_blank" rel="noopener" class="btn btn-outline-dark">Follow on Instagram</a>
+      </div>
+      <div class="reveal">
+        <div class="qr-card">
+          <span class="corner tl"></span><span class="corner tr"></span>
+          <span class="corner bl"></span><span class="corner br"></span>
+          <div class="scan-label">Scan to Follow</div>
+          <div class="handle">@sush_artistry</div>
+          <img src="assets/instagram-qr.jpg" alt="QR code to Instagram profile @sush_artistry">
+          <a href="https://instagram.com/sush_artistry" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;">Follow on Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section style="background:var(--cream);">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Testimonials</div>
+      <h2>Love From My Clients</h2>
+      <svg class="ornament" viewBox="0 0 64 18"><path d="M0 9 C 16 -4, 24 22, 32 9 S 48 -4, 64 9"/></svg>
+    </div>
+    <div class="testimonials-grid reveal">
+      <div class="testimonial-card">
+        <div class="quote-mark">“</div>
+        <p>Absolutely loved my bridal makeup. I felt confident, comfortable, and beautiful throughout the entire day.</p>
+        <div class="author">— Happy Bride</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">“</div>
+        <p>Sushma understood exactly what I wanted. The look was elegant, long-lasting, and photographed beautifully.</p>
+        <div class="author">— Engagement Client</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">“</div>
+        <p>Professional, warm, and incredibly talented. My entire bridal party trusted her completely on the day.</p>
+        <div class="author">— Wedding Guest</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-top reveal">
+      <div class="eyebrow">Get In Touch</div>
+      <h2>Ready for Your Perfect Look?</h2>
+      <p>Whether you're getting married, celebrating an engagement, attending a special event, or simply want to feel your best, let's create a look that's made for you.</p>
+      <div class="contact-actions">
+        <a href="https://wa.me/" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp</a>
+        <a href="https://instagram.com/sush_artistry" target="_blank" rel="noopener" class="btn btn-outline">Instagram</a>
+        <a href="tel:" class="btn btn-outline">Call</a>
+      </div>
+    </div>
+
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <h4>Booking Details</h4>
+        <div class="info-row">
+          <div class="k">Instagram</div>
+          <div class="v">@sush_artistry</div>
+        </div>
+        <div class="info-row">
+          <div class="k">Phone</div>
+          <div class="v">Add Phone Number</div>
+        </div>
+        <div class="info-row">
+          <div class="k">Email</div>
+          <div class="v">Add Email Address</div>
+        </div>
+        <div class="info-row">
+          <div class="k">Location</div>
+          <div class="v">Kathmandu, Nepal</div>
+        </div>
+      </div>
+
+      <form id="bookingForm">
+        <div class="field"><label>Name</label><input type="text" name="name" required></div>
+        <div class="field"><label>Phone Number</label><input type="tel" name="phone" required></div>
+        <div class="field"><label>Email</label><input type="email" name="email" required></div>
+        <div class="field"><label>Event Date</label><input type="date" name="eventDate"></div>
+        <div class="field full">
+          <label>Service Required</label>
+          <select name="service">
+            <option>Bridal & Non-Bridal Makeup</option>
+            <option>Pre & Post-Wedding Makeup</option>
+            <option>Engagement Makeup</option>
+            <option>Party & Event Makeup</option>
+            <option>Lashes & Nails</option>
+            <option>Mehndi / Henna</option>
+            <option>Complete Bridal Grooming Package</option>
+          </select>
+        </div>
+        <div class="field full"><label>Message</label><textarea name="message" placeholder="Tell us about your occasion..."></textarea></div>
+        <div class="full submit-row">
+          <button type="submit" class="btn btn-rose">Send Booking Request</button>
+          <span class="form-note" id="formNote">We'll respond within 24 hours.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="name">SUSHMA CHHETRI</div>
+        <div class="tag">Professional Makeup Artist · 11+ Years of Experience</div>
+      </div>
+      <div class="footer-services">
+        Bridal Makeup &middot; Non-Bridal Makeup &middot; Engagement &middot; Events &middot; Lashes &middot; Nails &middot; Mehndi &middot; Bridal Grooming
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Sushma Chhetri. All Rights Reserved.</div>
+      <div class="footer-social">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4.6" stroke="currentColor" stroke-width="1.4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg>
+        <a href="https://instagram.com/sush_artistry" target="_blank" rel="noopener">@sush_artistry</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky header
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }));
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Booking form (front-end only demo)
+  const form = document.getElementById('bookingForm');
+  const formNote = document.getElementById('formNote');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formNote.textContent = 'Thank you — your booking request has been noted. We\'ll be in touch soon.';
+    formNote.style.color = 'var(--rose)';
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
