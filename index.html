@@ -876,7 +876,6 @@
     <div class="footer-top">
       <div class="footer-brand">
         <div class="name">SUSHMA CHHETRI</div>
-        <div class="tag">Professional Makeup Artist · 11+ Years of Experience</div>
       </div>
       <div class="footer-services">
         Bridal Makeup &middot; Non-Bridal Makeup &middot; Engagement &middot; Events &middot; Lashes &middot; Nails &middot; Mehndi &middot; Bridal Grooming
@@ -923,12 +922,35 @@
   }, { threshold: 0.15 });
   revealEls.forEach(el => io.observe(el));
 
-  // Booking form (front-end only demo)
+  // Booking form — opens the client's email app with a prefilled message to BOOKING_EMAIL.
+  // IMPORTANT: replace the placeholder below with Sushma's real email address.
+  const BOOKING_EMAIL = "hello@sushartistry.com"; // <-- CHANGE THIS to the real booking email
+
   const form = document.getElementById('bookingForm');
   const formNote = document.getElementById('formNote');
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    formNote.textContent = 'Thank you — your booking request has been noted. We\'ll be in touch soon.';
+    const data = new FormData(form);
+    const name = data.get('name') || '';
+    const phone = data.get('phone') || '';
+    const email = data.get('email') || '';
+    const eventDate = data.get('eventDate') || '';
+    const service = data.get('service') || '';
+    const message = data.get('message') || '';
+
+    const subject = `Booking Request — ${name || 'New Client'}`;
+    const body =
+      `Name: ${name}\n` +
+      `Phone: ${phone}\n` +
+      `Email: ${email}\n` +
+      `Event Date: ${eventDate}\n` +
+      `Service Required: ${service}\n` +
+      `Message: ${message}`;
+
+    const mailtoUrl = `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+
+    formNote.textContent = 'Opening your email app to send this request…';
     formNote.style.color = 'var(--rose)';
     form.reset();
   });
